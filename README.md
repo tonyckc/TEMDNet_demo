@@ -17,6 +17,11 @@ Recently,data-driven denoising methods have achieved impressive perfromace, wher
 ### On real-world data
 
 ![images](fig4.png)
+### Simulated Example Data
+## Example Data
+An example dataset, including training data and test data, can be downloaded at  [here](https://drive.google.com/drive/folders/11EskQkve_Vi8-wcccbHTM6qh36q4FJMg?usp=sharing)
+## Simulated Data by yourself
+Please refer to the paper for more details and you can also utilize a data_generator script at [here](https://github.com/tonyckc/TEM-NLnet_demo/blob/main/utils/Data_generator.py)
 
 ## Configurations
 1) python 3+
