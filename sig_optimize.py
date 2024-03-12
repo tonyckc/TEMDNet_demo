@@ -10,16 +10,16 @@ import scipy.io as scio
 import random
 import utils.get_next_batch_sig
 from argparse import ArgumentParser
-from sig_noise_prior import model as net
-from sig_noise_prior_nodilated import model as net2
-from sig_noise_prior_nores import model as net3
-from sig_noise_prior_res import model as net4
-from sig_noise_prior_nores_v3 import model as net5
-from Resnet_9 import model as net6
-from Resnet_6 import model as net7
-from FFDNet import denoiser as net8
-from IRCNN import denoiser as net9
-from DnCNN import denoiser as net10
+from model.sig_noise_prior import model as net
+from model.sig_noise_prior_nodilated import model as net2
+from model.sig_noise_prior_nores import model as net3
+from model.sig_noise_prior_res import model as net4
+from model.sig_noise_prior_nores_v3 import model as net5
+from model.Resnet_9 import model as net6
+from model.Resnet_6 import model as net7
+from model.FFDNet import denoiser as net8
+from model.IRCNN import denoiser as net9
+from model.DnCNN import denoiser as net10
 #from plainCNN_noise_prior import denoiser
 from utils.losses import res_loss
 from utils.losses import MSE_loss
