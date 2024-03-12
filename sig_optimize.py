@@ -1,7 +1,6 @@
 import datetime
 import numpy as np
 import sys
-sys.path.append('/home/chenkecheng/TEM_ADMM/model')
 import tensorflow as tf
 import os
 os.environ["CUDA_VISIBLE_DEVICES"] = "6" # notice! set the environment variable to
@@ -9,7 +8,7 @@ from PIL import Image
 import scipy.misc as misc
 import scipy.io as scio
 import random
-import get_next_batch_sig
+import utils.get_next_batch_sig
 from argparse import ArgumentParser
 from sig_noise_prior import model as net
 from sig_noise_prior_nodilated import model as net2
@@ -22,9 +21,9 @@ from FFDNet import denoiser as net8
 from IRCNN import denoiser as net9
 from DnCNN import denoiser as net10
 #from plainCNN_noise_prior import denoiser
-from losses import res_loss
-from losses import MSE_loss
-from losses import res_loss_MAE
+from utils.losses import res_loss
+from utils.losses import MSE_loss
+from utils.losses import res_loss_MAE
 
 def train(input_data, real_data, test_data, training_id, MODEL_SAVE_PATH, TENSORBOARD_SAVE_PATH,
           DENOISING_IMG_PATH, LEARNING_RATE_BASE, LEARNING_RATE_DECAY, EPOCHS, LOAD_MODEL=False,

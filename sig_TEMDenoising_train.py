@@ -11,7 +11,7 @@ import numpy as np
 import sys
 
 sys.path.insert(0, './model')
-import tensorflow as tf
+
 import os
 from PIL import Image
 import scipy.misc as misc
@@ -19,19 +19,18 @@ import random
 from argparse import ArgumentParser
 import sig_optimize
 import sig_test
-import sig_proprocess
 
 training_id = ''
 #MODEL_SAVE_PATH = '/home/chenkecheng/TEM_ADMM/trianing_data/{}/logs_{}'.format(training_id, training_id)
 MODEL_SAVE_PATH = ''
-TENSORBOARD_SAVE_PATH = '/home/chenkecheng/TEM_ADMM/trianing_data/{}/tensorboard_{}'.format(training_id, training_id)
-DENOISING_IMG_PATH = '/home/chenkecheng/TEM_ADMM/trianing_data/{}/denoising_img_{}'.format(training_id, training_id)
-DATASET_PATH_INPUT = '/hdd/chenkecheng/TEM_ADMM/src/noise_signal.mat'
-DATASET_PATH_REAL = '/hdd/chenkecheng/TEM_ADMM/src/clean_signal.mat'
+TENSORBOARD_SAVE_PATH = 'your path/{}/tensorboard_{}'.format(training_id, training_id)
+DENOISING_IMG_PATH = 'your path/{}/denoising_img_{}'.format(training_id, training_id)
+DATASET_PATH_INPUT = 'your path/noise_signal.mat'
+DATASET_PATH_REAL = 'your path/clean_signal.mat'
 #DATASET_PATH_TEST = '/hdd/chenkecheng/TEM_ADMM/src/test.mat'
-DATASET_PATH_TEST = ''
+DATASET_PATH_TEST = 'your path/test_signal.mat'
 #TEST_SAVE_PATH = ''
-TEST_SAVE_PATH = ''
+TEST_SAVE_PATH = 'your path'
 LEARNING_RATE_BASE = 0.001
 LEARNING_RATE_DECAY = 0.98
 EPOCHS = 222
@@ -42,7 +41,8 @@ TEST_BATCH_SIZE= 20
 IMG_SIZE = 50
 DEVICE = '/gpu:0'
 STDDEV = 0.01
-
+exit()
+import tensorflow as tf
 
 def train():
     input_data, real_data, test_data = sig_proprocess.proprocess(MODEL_SAVE_PATH=MODEL_SAVE_PATH,
